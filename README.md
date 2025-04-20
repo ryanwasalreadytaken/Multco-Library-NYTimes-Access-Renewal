@@ -21,8 +21,8 @@ There are a number of items that can be configured in the `.env` file. Only four
 
 - `MCL_CARDNUM` - Your Multnomah County Library library card number
 - `MCL_CARDPIN` - Your Multnomah County Library pin number
-- `NTY_EMAIL` - Your nytimes.com username/email address
-- `NYT_PASS` - Your mytimes.com password
+- `NTY_EMAIL` - Your NYTimes.com username/email address
+- `NYT_PASS` - Your NYTimes.com password
  
 These are the same card and pin numbers you use to login to the library website and NYTimes.com. This script will not work if any of these items are not populated in `.env` or are invalid.
 
