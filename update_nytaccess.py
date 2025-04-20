@@ -77,10 +77,8 @@ if __name__ == '__main__':
         driver.get(url)
 
         # Login to Multco Library proxy site
-        username = driver.find_element(By.NAME, value='user')
-        password = driver.find_element(By.NAME, value='pass')
-        username.send_keys(cardnum)
-        password.send_keys(cardpin, Keys.RETURN)
+        driver.find_element(By.NAME, value='user').send_keys(cardnum)
+        driver.find_element(By.NAME, value='pass').send_keys(cardpin, Keys.RETURN)
 
         # Click continue on NYT terms of service page
         button_text = "Continue"
@@ -88,8 +86,7 @@ if __name__ == '__main__':
         continue_button.click()
 
         # Login to NYT
-        login = driver.find_element(By.LINK_TEXT, 'Log in')
-        login.click()
+        login = driver.find_element(By.LINK_TEXT, 'Log in').click()
 
         # Input creds and submit
         driver.find_element(By.XPATH, "//*[@id='email']").send_keys(email)
