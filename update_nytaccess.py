@@ -86,7 +86,7 @@ if __name__ == '__main__':
         continue_button.click()
 
         # Login to NYT
-        login = driver.find_element(By.LINK_TEXT, 'Log in').click()
+        driver.find_element(By.LINK_TEXT, 'Log in').click()
 
         # Input creds and submit
         driver.find_element(By.XPATH, "//*[@id='email']").send_keys(email)
