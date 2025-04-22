@@ -19,10 +19,10 @@ If any of these items have not been completed prior to running the script will f
 
 There are a number of items that can be configured in the `.env` file. Only four are strictly required for this script to work:
 
-- `MCL_CARDNUM` - Your Multnomah County Library library card number
-- `MCL_CARDPIN` - Your Multnomah County Library pin number
-- `NTY_EMAIL` - Your NYTimes.com username/email address
-- `NYT_PASS` - Your NYTimes.com password
+  - `MCL_CARDNUM` - Your Multnomah County Library library card number
+  - `MCL_CARDPIN` - Your Multnomah County Library pin number
+  - `NTY_EMAIL` - Your NYTimes.com username/email address
+  - `NYT_PASS` - Your MYTimes.com password
  
 These are the same card and pin numbers you use to login to the library website and NYTimes.com. This script will not work if any of these items are not populated in `.env` or are invalid.
 
@@ -30,10 +30,10 @@ These are the same card and pin numbers you use to login to the library website 
 
 The script is capable of Pushover alerting, however this is disabled by default. To enable populate the following items in .env with your information:
 
-- `ALERTS=true` - This enables alerting
-- `ALERT_PRIORITY=0` - This will determine the priority the alert is sent with. See [Pushover Message Priority](https://pushover.net/api#priority) for more info.
-- `PUSH_USERKEY=yourpushoveruserkey` - Populate this with your pushover user key
-- `PUSH_TOKEN=yourpushoverapitoken` - Populate this with your pushover api token
+  - `ALERTS=true` - This enables alerting
+  - `ALERT_PRIORITY=0` - This will determine the priority the alert is sent with. See [Pushover Message Priority](https://pushover.net/api#priority) for more info.
+  - `PUSH_USERKEY=yourpushoveruserkey` - Populate this with your pushover user key
+  - `PUSH_TOKEN=yourpushoverapitoken` - Populate this with your pushover api token
 
 ## Usage ##
 
@@ -58,7 +58,7 @@ If all configuration options are correct and there were no errors you'll see som
 `2025-04-04 16:06 - INFO - NYT access renewal was successful!`
 
 ### Scheduling via cron ###
-While there are a many ways to kick off a script, nearly all of my scripts run from a linux machine so my preferred method is to create a python virtual environment and using cron for scheduling. Cron is simple, straightforward, has been around for a million years, and virtually never fails. To schedule the script to run every morning at 6AM complete the steps below, making sure to modify the directories to fit your environment.
+While there are many ways to kick off a script, nearly all of my scripts run from a linux machine so my preferred method is to create a python virtual environment and using cron for scheduling. Cron is simple, straightforward, has been around for a million years, and virtually never fails. To schedule the script complete the steps below, making sure to modify the directories to fit your environment.
 
 1. Open cron editor under your user account: `crontab -e`
 2. Add the following line at the bottom of the file, making sure to modify the directories to fit your environment.:
@@ -69,7 +69,7 @@ While there are a many ways to kick off a script, nearly all of my scripts run f
 > You will need to modify the path in the cron entry above to match the directory you're actually running from. In my case "cd /path/to/script/gitcloned" is changed to "/opt/scripts/nyt-library-update"
 
 ## Logging ##
-Logging can be enable or disabled entirely by setting `ALERTS=` to true or false in `.env`. 
+Logging can be enabled or disabled entirely by setting `ALERTS=` to true or false in `.env`. 
 
 When running manually the script will log to the console as well as a log file located at logs/update.log. When scheduled with cron or otherwise automated the script will still log to logs/update.log. Logs will be rotated after they reach approximately 10MB in size. A total of 3 logs files will be rolled over. 
 
